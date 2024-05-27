@@ -23,5 +23,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".github\workflows\build.yml" />
+    <None Include=".github\workflows\release.yml" />
   </ItemGroup>
 </Project>
