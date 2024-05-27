@@ -10,6 +10,7 @@ public readonly struct Settings
     private readonly ConfigFile CONFIG;
     private readonly ConfigEntry<bool> ENABLE_MOD;
     private readonly ConfigEntry<bool> FULL_REMOVE;
+    private readonly ConfigEntry<bool> FILTER_URLS;
 
     public static readonly string CONFIG_PATH = Path.Combine(BepInEx.Paths.ConfigPath, "CrimsonChatFilter");
 
@@ -18,6 +19,7 @@ public readonly struct Settings
         CONFIG = config;
         ENABLE_MOD = CONFIG.Bind("Config", "EnableMod", true, "Enable or disable chat filtering");
         FULL_REMOVE = CONFIG.Bind("Config", "FullRemove", false, "If enabled, others won't see the message, otherwise replaces filtered words with ****");
+        FILTER_URLS = CONFIG.Bind("Config", "FilterURLs", true, "Includes .com and server addresses in filter list");
     }
 
     public readonly void InitConfig()
@@ -63,6 +65,7 @@ public readonly struct Settings
         {
             Options.Enable => ENABLE_MOD.Value,
             Options.FullRemove => FULL_REMOVE.Value,
+            Options.FilterUrl => FILTER_URLS.Value,
             _ => false
         };
     }
@@ -70,6 +73,7 @@ public readonly struct Settings
     public enum Options
     { 
         Enable,
-        FullRemove
+        FullRemove,
+        FilterUrl
     }
 }
