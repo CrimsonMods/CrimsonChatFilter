@@ -28,3 +28,13 @@ FullRemove = false
 # Default value: true
 FilterURLs = true
 ```
+
+## Support
+
+Want to support my V Rising Mod development? 
+
+Join [Vexor World]() where I create exclusive content mods
+Donations Accepted with [Ko-Fi](https://ko-fi.com/skytech6)
+Or buy/play my games! 
+[Train Your Minibot](https://store.steampowered.com/app/713740/Train_Your_Minibot/) 
+[Boring Movies](https://store.steampowered.com/app/1792500/Boring_Movies/)
