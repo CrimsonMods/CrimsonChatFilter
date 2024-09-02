@@ -9,6 +9,13 @@
 * Run server to generate _(VRising server folder)/BepInEx/plugins/CrimsonChatFilter/filtered_words.json_
 * Edit _filtered_words.json_ to modify the words that should be filtered
 
+The Filtered Words list supports literals and wildcards for example
+
+* "shit" will filter = "shit".
+* "shit*" will filter = "shit", "shitface".
+* "\*shit" will filter = "shit", "fuckshit".
+* "\*shit*" will filter = "shit", "shitface", "fuckshit".
+
 ## Configurable Values
 ```ini
 [CrimsonChatFilter]

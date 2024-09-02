@@ -20,9 +20,10 @@ internal static class FilterString
 
         foreach (var word in FilteredWords)
         { 
-            string pattern = $@"\b{Regex.Escape(word)}\b";
+            string pattern = CreateRegexPattern(word);
             input = Regex.Replace(input, pattern, "****", RegexOptions.IgnoreCase);
         }
+
         return input;
     }
 
@@ -36,9 +37,16 @@ internal static class FilterString
 
         foreach (var word in FilteredWords)
         { 
-            if(input.Contains(word)) return true;
+            string pattern = CreateRegexPattern(word);
+            if (Regex.IsMatch(input, pattern, RegexOptions.IgnoreCase)) return true;
         }
 
         return false;
+    }
+
+    private static string CreateRegexPattern(string word)
+    {
+        string escapedWord = Regex.Escape(word).Replace(@"\*", ".*");
+        return $@"\b{escapedWord}\b";
     }
 }
