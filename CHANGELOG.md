@@ -1,3 +1,6 @@
+`0.1.3`
+- Don't filter System messages
+
 `0.1.2`
 - Added Literal Matching
 - Added Wildcard Matching

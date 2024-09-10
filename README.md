@@ -40,8 +40,6 @@ FilterURLs = true
 
 Want to support my V Rising Mod development? 
 
-Join [Vexor World]() where I create exclusive content mods
-
 Donations Accepted with [Ko-Fi](https://ko-fi.com/skytech6)
 
 Or buy/play my games! 

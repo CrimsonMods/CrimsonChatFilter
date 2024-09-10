@@ -32,6 +32,7 @@ public class Plugin : BasePlugin
 
         Bloodstone.Hooks.Chat.OnChatMessage += ((x) => 
         {
+            if (x.Type == ProjectM.Network.ChatMessageType.System) return;
             if (!Settings.GetActiveOption(Settings.Options.Enable)) return;
             if (!Settings.GetActiveOption(Settings.Options.FullRemove)) return;
             if (x.Message.ContainsFiltered())

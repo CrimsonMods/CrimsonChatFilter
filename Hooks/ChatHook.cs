@@ -28,6 +28,8 @@ public static class ChatMessageSystem_Patch
 
                 var messageText = chatEventData.MessageText.ToString();
 
+                if (chatEventData.MessageType == ChatMessageType.System) continue;
+
                 messageText = messageText.Filter();
 
                 chatEventData.MessageText = messageText;
